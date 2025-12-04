@@ -4,7 +4,7 @@
 
 # I use Arch btw
 A hotkey macropad for typing 'I use Arch btw'.  
-A Blueprint Hackpad project. Learn more at [blueprint.hackclub.com/projects/4516](https://blueprint.hackclub.com/projects/4516).
+**A Blueprint Hackpad project. Learn more at [blueprint.hackclub.com/projects/4516](https://blueprint.hackclub.com/projects/4516).**
 
 <img width="425" height="40" alt="" src="https://github.com/user-attachments/assets/a35a58d0-02e6-4541-8925-4abd18f78766" />
 <br>
