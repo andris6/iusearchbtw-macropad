@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I use Arch btw - Hackpad</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #333333;
+    color: #d4d4d4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wrapper {
+    max-width: 771px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  a {
+    color: #569cd6;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  pre {
+    background-color: #252526;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  code {
+    background-color: #2d2d2d;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div id="content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+async function fetchReadme() {
+    const user = 'andris6';
+    const repo = 'iusearchbtw-macropad';
+    const url = `https://raw.githubusercontent.com/${user}/${repo}/main/README.md`;
+    
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Could not fetch README');
+        const markdown = await res.text();
+        const html = marked.parse(markdown);
+        document.getElementById('content').innerHTML = html;
+    } catch (err) {
+        document.getElementById('content').innerText = err.message;
+    }
+}
+
+fetchReadme();
+</script>
+
+</body>
+</html>
